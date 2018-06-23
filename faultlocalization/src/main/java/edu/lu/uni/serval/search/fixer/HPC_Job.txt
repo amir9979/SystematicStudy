@@ -1,0 +1,20 @@
+## EMS
+## Chart_: 4, 11, (17).
+## Lang_: 21, 24, 46, 48, 49, 51, 52, 53, 54.
+## Math_: 63, 70, 75, 79, 91, 94.
+## Mockito_: 13.
+
+## EMSWN:
+## Chart_: (10, 17, 18, )
+## Lang_: 2, (29, 40, 41, 42, 46, 48, 51,) 54, (55, 60, 62, 64)
+## Math_: (11, 16, 80, 93, 95, 99.)
+
+EMS
+Chart_11  Lang_21  Lang_46  Lang_49  Lang_52  Lang_54  Math_70  Math_79  Math_94
+Chart_4   Lang_24  Lang_48  Lang_51  Lang_53  Math_63  Math_75  Math_91  Mockito_13
+Chart_17  
+EMSWN
+Chart_18  Lang_2   Lang_51  Math_75  Math_79
+Chart_10  Lang_29  Lang_40  Lang_41  Lang_46   Lang_54  Lang_60  Lang_62  Lang_64
+Chart_17  
+
