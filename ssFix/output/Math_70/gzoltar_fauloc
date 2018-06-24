@@ -1,0 +1,14 @@
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,72,1.0
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,66,0.7071067811865475
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,88,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,87,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,86,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,85,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,80,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.BisectionSolver,79,0.5
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,223,0.3779644730092272
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,167,0.08481889296799709
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,166,0.08481889296799709
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,165,0.08481889296799709
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,213,0.08032193289024989
+Suspicious line:org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl,208,0.08032193289024989

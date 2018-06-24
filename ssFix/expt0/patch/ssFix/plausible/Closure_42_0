@@ -1,0 +1,19 @@
+*** /data/people/qx5/repair_expts_1/Closure_42/patches/f2/c6/p5/TestErrorReporter.java	Sat Apr 22 05:16:21 2017
+--- /data/people/qx5/defects4j-bugs/closures/projs/Closure_42_buggy/src/com/google/javascript/jscomp/testing/TestErrorReporter.java	Wed Aug 10 19:38:06 2016
+***************
+*** 84,89 ****
+     * Returns whether all errors were reported to this reporter.
+     */
+    public boolean hasEncounteredAllErrors() {
+!     return (warnings == null) ? warningsIndex == 0 : warnings.length == warningsIndex;
+    }
+  }
+--- 84,91 ----
+     * Returns whether all errors were reported to this reporter.
+     */
+    public boolean hasEncounteredAllErrors() {
+!     return (errors == null) ?
+!         errorsIndex == 0 :
+!         errors.length == errorsIndex;
+    }
+  }

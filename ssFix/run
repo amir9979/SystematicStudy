@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#TO DO: for the next line, replace XXX with the ABSOLUTE path of your ssFix directory, then remove the leading # symbol.
+#proj_dir=XXX 
+
+java -Xms1024m -Xmx8192m -cp :${proj_dir}/build:${proj_dir}/lib/fauloc/* edu.brown.cs.ssfix.fauloc.FaultLocalization $*
+
+java -Xms1024m -Xmx8192m -cp :${proj_dir}/build:${proj_dir}/lib/* edu.brown.cs.ssfix.repair.Main $*
+
+
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/com.gzoltar-0.1.1-jar-with-dependencies.jar -DpomFile=pom.xml
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/ccmatcher.jar -DpomFile=pom.xml
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/cocker.jar -DpomFile=pom.xml
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/ivy.jar -DpomFile=pom.xml
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/ptns.jar -DpomFile=pom.xml
+mvn install:install-file -Dfile=/Users/kui.liu/eclipse-workspace/ssFix/lib/rename.jar -DpomFile=pom.xml

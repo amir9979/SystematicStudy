@@ -1,0 +1,8 @@
+Suspicious line:org.apache.commons.math.complex.Complex,153,0.22360679774997896
+Suspicious line:org.apache.commons.math.complex.Complex,152,0.22360679774997896
+Suspicious line:org.apache.commons.math.complex.Complex,319,0.20412414523193154
+Suspicious line:org.apache.commons.math.complex.Complex,997,0.11952286093343936
+Suspicious line:org.apache.commons.math.complex.Complex,308,0.09853292781642932
+Suspicious line:org.apache.commons.math.complex.Complex,299,0.09805806756909202
+Suspicious line:org.apache.commons.math.util.MathUtils,2334,0.04559607525875532
+Suspicious line:org.apache.commons.math.util.MathUtils,2331,0.045360921162651446

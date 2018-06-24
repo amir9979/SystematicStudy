@@ -1,0 +1,324 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>uni.lu.serval</groupId>
+	<artifactId>ssFix</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>ssFix</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.kohsuke/asm5 -->
+		<!-- <dependency>
+			<groupId>org.kohsuke</groupId>
+			<artifactId>asm5</artifactId>
+			<version>5.0.1</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/cglib/cglib -->
+		<!-- <dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>3.2.6</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.evosuite/evosuite-master -->
+		<!-- <dependency>
+		    <groupId>org.evosuite</groupId>
+		    <artifactId>evosuite-master</artifactId>
+		    <version>1.0.6</version>
+		</dependency> -->
+
+
+		<!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-discovery/commons-discovery -->
+		<!-- <dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.5</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
+		<!-- <dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.6</version>
+			<scope>test</scope>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.core/org.eclipse.core.commands -->
+		<!-- <dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>org.eclipse.core.commands</artifactId>
+			<version>3.6.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.core/org.eclipse.core.contenttype -->
+		<!-- <dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>org.eclipse.core.contenttype</artifactId>
+			<version>3.4.100</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.filebuffers -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.filebuffers</artifactId>
+			<version>3.6.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.filesystem -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.filesystem</artifactId>
+			<version>1.7.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.core/org.eclipse.core.jobs -->
+		<!-- <dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>org.eclipse.core.jobs</artifactId>
+			<version>3.5.100</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.net -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.net</artifactId>
+			<version>1.3.100</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.resources -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.resources</artifactId>
+			<version>3.12.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.runtime -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.runtime</artifactId>
+			<version>3.13.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.debug.core -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.debug.core</artifactId>
+			<version>3.11.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.equinox.app -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.app</artifactId>
+			<version>1.3.400</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.equinox.common -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.9.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.equinox.preferences -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.preferences</artifactId>
+			<version>3.7.0</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.equinox.registry -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.registry</artifactId>
+			<version>3.7.0</version>
+		</dependency> -->
+
+		<!-- eclipse JDT -->
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>runtime</artifactId>
+			<version>3.10.0-v20140318-2214</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.birt.runtime</groupId>
+			<artifactId>org.eclipse.core.resources</artifactId>
+			<version>3.10.0.v20150423-0755</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.tycho</groupId>
+			<artifactId>org.eclipse.jdt.core</artifactId>
+			<version>3.12.0.v20160516-2131</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.core -->
+		<!-- <dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.core</artifactId>
+			<version>3.13.102</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.core.manipulation -->
+		<dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.core.manipulation</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jdt.debug/ui -->
+		<!-- <dependency>
+			<groupId>org.eclipse.jdt.debug</groupId>
+			<artifactId>ui</artifactId>
+			<version>3.2.100-v20070531-1800</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.debug -->
+		<!-- <dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.debug</artifactId>
+			<version>3.11.50</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.ltk.core.refactoring -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.ltk.core.refactoring</artifactId>
+			<version>3.8.0</version>
+		</dependency> -->
+
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.mylyn.monitor/core -->
+		<!-- <dependency>
+			<groupId>org.eclipse.mylyn.monitor</groupId>
+			<artifactId>core</artifactId>
+			<version>2.0.0-v20070627-1400</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.mylyn.monitor/ui -->
+		<!-- <dependency>
+			<groupId>org.eclipse.mylyn.monitor</groupId>
+			<artifactId>ui</artifactId>
+			<version>2.0.0-v20070627-1400</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.osgi/org.eclipse.osgi -->
+		<!-- <dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>3.7.1</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.osgi/org.eclipse.osgi.services -->
+		<!-- <dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi.services</artifactId>
+			<version>3.2.100.v20100503</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.osgi/org.eclipse.osgi.util -->
+		<!-- <dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi.util</artifactId>
+			<version>3.2.100.v20100503</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.swt -->
+		<!-- <dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.swt</artifactId>
+			<version>3.106.3</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.text/org.eclipse.text -->
+		<!-- <dependency>
+			<groupId>org.eclipse.text</groupId>
+			<artifactId>org.eclipse.text</artifactId>
+			<version>3.5.101</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+		<!-- <dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.joda/joda-convert -->
+		<!-- <dependency>
+			<groupId>org.joda</groupId>
+			<artifactId>joda-convert</artifactId>
+			<version>1.2</version>
+		</dependency> -->
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-suggest -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-suggest</artifactId>
+			<version>4.10.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
+		<!-- <dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.8.0</version>
+			<scope>test</scope>
+		</dependency> -->
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

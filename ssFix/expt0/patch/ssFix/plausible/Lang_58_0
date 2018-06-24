@@ -1,0 +1,23 @@
+*** /data/people/qx5/repair_expts_1/Lang_58/patches/f14/c49/p24/NumberUtils.java	Sat Apr 22 00:28:57 2017
+--- /data/people/qx5/defects4j-bugs/langs/projs/Lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java	Mon Nov 30 20:52:24 2015
+***************
+*** 461,471 ****
+                          return createBigInteger(numeric);
+  
+                      }
+! 				try {
+! 					return createLong(numeric);
+! 				} catch (NumberFormatException nfe) {
+! 				}
+! 				throw new NumberFormatException(str + " is not a valid number.");
+                  case 'f' :
+                  case 'F' :
+                      try {
+--- 461,467 ----
+                          return createBigInteger(numeric);
+  
+                      }
+!                     throw new NumberFormatException(str + " is not a valid number.");
+                  case 'f' :
+                  case 'F' :
+                      try {

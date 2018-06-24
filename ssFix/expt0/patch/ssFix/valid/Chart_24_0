@@ -1,0 +1,19 @@
+*** /data/people/qx5/repair_expts_1/Chart_24/patches/f1/c93/p0/GrayPaintScale.java	Sat Apr 22 03:08:16 2017
+--- /data/people/qx5/defects4j-bugs/charts/projs/Chart_24_buggy/source/org/jfree/chart/renderer/GrayPaintScale.java	Tue Oct 11 13:03:52 2016
+***************
+*** 122,128 ****
+       */
+      public Paint getPaint(double value) {
+          double v = Math.max(value, this.lowerBound);
+!         value = Math.min(v, this.upperBound);
+          int g = (int) ((value - this.lowerBound) / (this.upperBound 
+                  - this.lowerBound) * 255.0);
+          return new Color(g, g, g);
+--- 122,128 ----
+       */
+      public Paint getPaint(double value) {
+          double v = Math.max(value, this.lowerBound);
+!         v = Math.min(v, this.upperBound);
+          int g = (int) ((value - this.lowerBound) / (this.upperBound 
+                  - this.lowerBound) * 255.0);
+          return new Color(g, g, g);
