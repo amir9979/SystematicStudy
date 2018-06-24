@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link rel="stylesheet" href="./style/styles.css">
+    <title>JAID User Manual</title>
+</head>
+<body>
+
+<!-- Header -->
+<div><span id="title">JAID User Manual</span></div>
+
+<!-- Content -->
+<div>
+    <h2>Configuring the JAID Project in IntelliJ IDEA</h2>
+
+    <p>The JAID tool was developed using the IntelliJ IDEA IDE. It assumes that a JDK, named <tt>JAID_JDK</tt>, 
+    of version 1.8 or later has been configured in the IDE. You 
+    could add this JDK at <tt>File/Project Structures/Project Settings/Project/Project SDK</tt>.
+    After the JDK has been properly configured, to open the JAID project in the IDE, go to 
+    <tt>File/Open</tt>, navigate to <tt>$JAID_DIR$</tt>, select <tt>fixja.iml</tt>, and clike on OK. 
+    Then the IDE should be able to successfully load all the other settings from <tt>fixja.iml</tt>, and you should be
+    able to compile and run/debug JAID with ease. </p>
+
+    <h2>Running/Debugging JAID</h2>
+
+    <p>Inputs required for JAID to run on a bug include the buggy program, a group of tests for the program, among which at least
+    one test fails due to the bug-under-fixing, the signature of the method containing the bug, etc. These inputs 
+    can be passed to JAID through command line arguments or using a properties file. Section 
+    <a href="#command_lien_arguments">Command Line Arguments</a> details all the command line arguments supported 
+    by JAID, as well as their meanings. </p>
+
+    <h2>Subject Faults</h2>
+        
+    <p><i>To run JAID on bugs from the Defects4J benchmark, please refer to instructions in README.md of the Experiment Scripts (included in the replication package).</i> </p>
+    
+    <p> An example (faulty) project is provided in folder <tt>$JAID_DIR$/example</tt>. You may modify the <tt>fixja.properties</tt> 
+        file to reflect the local settings on your machine and refer to the image below to add a Run/Debug Configuration for 
+        running/debugging JAID using the example. </br></br>
+
+        <img src="img/how_to_config.jpg" alt="Run/Debug configuration for JAID-fixing the example fault.">
+    </p>
+
+</div>
+
+<div id="command_lien_arguments">
+
+    <h2>Command Line Arguments</h2>
+
+    <table class="centerTable">
+        <tr>
+            <th>Argument Name</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>FixjaSettingFile</td>
+            <td>Full path to a properties file containing the settings for running JAID. When specified, other command
+                line arguments are ignored.
+            </td>
+        </tr>
+        <tr>
+            <td>Encoding</td>
+            <td>Encoding of the project source code files (Default: UTF8).</td>
+        </tr>
+        <tr>
+            <td>ExpToExclude</td>
+            <td>List of expressions that should NOT be used for program state monitoring (Default: Empty list).</td>
+        </tr>
+        <tr>
+            <td>JDKDir</td>
+            <td>Full path to the JDK installation.</td>
+        </tr>
+        <tr>
+            <td>LogLevel</td>
+            <td>Verbosity level of generated logs. Valid values: OFF, ERROR, WARN, INFO, DEBUG, TRACE, ALL.</td>
+        </tr>
+        <tr>
+            <td>ProjectRootDir</td>
+            <td>Full path to the project root directory. All other relative paths will be resolved against this path
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectSourceDir</td>
+            <td>List of relative paths to the project source directories, separated by path separators (; for Windows
+                and : for Mac OS or Linux).
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectOutputDir</td>
+            <td>Relative path to the project output directory.</td>
+        </tr>
+        <tr>
+            <td>ProjectTestOutputDir</td>
+            <td>Relative path to the project test output directory.</td>
+        </tr>
+        <tr>
+            <td>ProjectLib</td>
+            <td>List of relative paths to the project libraries (e.g., jar files), separated by path separators (; for
+                Windows and : for Mac OS or Linux).
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectTestSourceDir</td>
+            <td>List of relative paths to the project test source directories, separated by path separators (; for
+                Windows and : for Mac OS or Linux).
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectTestsToInclude</td>
+            <td>List of tests that should be used for fixing. All tests will be used if not specified. </br>Format:
+                FullyQualifiedClassName;FullyQualifiedClassName#MethodName
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectTestsToExclude</td>
+            <td>List of tests that should NOT be used for fixing. No test will be excluded if not specified. </br>
+                Format: FullyQualifiedClassName;FullyQualifiedClassName#MethodName
+            </td>
+        </tr>
+        <tr>
+            <td>ProjectExtraClasspath</td>
+            <td>List of extra classpaths.</td>
+        </tr>
+        <tr>
+            <td>MethodToFix</td>
+            <td>Method to fix. Format: MethodName(Type1,Type2)@FullyQualifiedPackageName.ClassName$InnerClassName.</td>
+        </tr>
+        <tr>
+            <td>TimeoutPerTest</td>
+            <td>Timeout in milli seconds for each test.</td>
+        </tr>
+        <tr>
+            <td>TargetJavaVersion</td>
+            <td>Source code target java version(Default: 1.8).</td>
+        </tr>
+        <tr>
+            <td>ProjectCompilationCommand</td>
+            <td>Command to compile the project. Only needed in special cases.</td>
+        </tr>
+        <tr>
+            <td>ProjectExecutionCommand</td>
+            <td>Command to execute the project. Only needed in special cases.</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h2>Outputs</h2>
+    JAID stores all its outputs in folder <tt>$PROJECT_ROOT_DIR$/fixja_output</tt>. For example, the contents
+    in that folder after a JAID fixing session (<tt>LogLevel = DEBUG</tt>) typically look like the following:</br>
+
+    <p><span style="display:inline-block; width:100px;"></span><img src="img/fixja_output.png"
+                                                                    alt="JAID output directory" style="width:270px">
+    </p></br>
+
+    From a user's point of view, two logs are the most important:
+    <ul>
+        <li><b>fixja.log</b> is the main log of JAID.</li>
+        <li><b>plausible_fix_actions.log</b> records the most useful information of each phase and all valid fixes
+            generated by JAID. Everything here is also included in <b>fixja.log</b>.
+        </li>
+    </ul>
+
+    Other logs record intermediate results produced in three different phases of fixing:
+    <ol>
+        <li>Fault Localization</br>
+
+            <p>Input tests are executed up to three times in this phase for fault localization. First, all the tests
+            are executed to produce a list of program locations that are relevant to the failure under consideration. 
+            Next, tests are executed again, with state monitoring enabled, to identify expressions that are impure, 
+            or with side-effects. Last, pure expressions are used to abstract the program states during test executions. 
+            State snapshots are then constructed from the observed states and analyzed to pinpoint the likely fault locations.</p>
+
+            <ul>
+                <li><b>pre4location_test_results.log</b> records the program locations covered by each test as well 
+                    as the test results from their first execution.</li>
+                <li><b>exe_locations.log</b> records all the locations within the method-to-fix that are relevant to the failure.
+                </li>
+                <li><b>pre4exp_test_results.log</b> records all the test results of the second monitor.</li>
+                <li><b>monitored_exps.log</b> records all the monitored expressions in different stages.</li>
+                <li><b>monitored_test_results.log</b> records the test results of each test of the third monitor.</li>
+                <li><b>monitored_states.log</b> records the states of all monitored expressions in each location of
+                    target method in each test during the fault localization phase.(This file can be large and is rarely
+                    inspected.)
+                </li>
+                <li><b>all_snapshots.log</b> shows all snapshots generated based on those captured dynamic states.</li>
+                <li><b>suspicious_snapshots.log</b> shows the selected snapshots as the input of next phase (Fix
+                    Generation).
+                </li>
+            </ul>
+
+        </li>
+
+        <li>Fix Generation</br>
+
+            <p>In this phase, JAID generates fix actions targeting the most suspicious state snapshots and then produces candidate fixes
+            by instantiating predefined fix schemas using fix actions, state snapshot expressions, and the old statement from the 
+            faulty method-to-fix.</p>
+
+            <ul>
+                <li><b>snippets.log</b> records all generated snippets.</li>
+                <li><b>raw_fix_actions.log</b> records all generated fixes.</li>
+            </ul>
+
+        </li>
+
+        <li>Fix Validation</br>
+
+            <p>All candidate fixes will be applied to the buggy program and checked against the input test cases. Only those
+            that pass all test will be reported to the user, i.e., recorded in <tt>plausible_fix_actions.log</tt>.</p>
+
+            <ul>
+                <li><b>evaluated_fix_actions.log</b> records the evaluated result of each generated fixes.</li>
+            </ul>
+
+        </li>
+    </ol>
+
+    <p>JAID works on a pretty-printed version of the method-to-fix. Pretty-printing takes place before fault localization, and the result
+    Java file is stored in <tt>$PROJECT_ROOT_DIR$/fixja_output/formatted_src</tt>. </p>
+
+    <h2>Copyright and License</h2>
+
+    JAID is distributed under the terms of the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public
+    License</a>. There is absolutely NO WARRANTY for JAID, its code and its documentation.<br>
+
+</div>
+
+
+</body>
+</html>
