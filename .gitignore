@@ -12,7 +12,4 @@ bugPositions
 .temp/
 log/
 logs/
-EMS/
-EMSWN/
-Facoy/
-src/main/java/edu/lu/uni/serval/search/syntactic/fixer/actions.txt
+astor/output_astor 
